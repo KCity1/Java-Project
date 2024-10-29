@@ -1,0 +1,39 @@
+Users: 
+	Signup ->
+	AddUser
+	login
+	forgetPassword
+	Fees Payment
+	
+	add Student
+	add Feedback
+	generate Report
+	MarksJSP
+	TimeTable
+	Attendance
+	
+	
+Student_portal:
+	Tables to create
+	-Student -> Name,Email,Ph.No,Gender,Aadhar Number, Address,Birthdate
+		->Sem1 Marks-> (Subjects)
+		->Sem2 Marks-> (Subjects)
+		->Sem3 Marks-> (Subjects)
+		->Sem4 Marks-> (Subjects)
+		->Sem5 Marks-> (Subjects)
+		->Sem6 Marks-> (Subjects)
+		
+		
+	-Teacher
+	-etc 
+	
+	
+create table student(
+	StudentId int Auto_Increment PRIMARY KEY,
+	Name varchar(30),
+	Email varchar(100) UNIQUE,
+	PhoneNo varchar(10),
+	Gender varchar(10),
+	AadharNum varchar(12),
+	Address varchar(40),
+	Birthdate date);

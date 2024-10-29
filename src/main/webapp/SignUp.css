@@ -1,0 +1,45 @@
+@charset "ISO-8859-1";
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(63, 63, 63);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.container {
+    background-color: #fff;
+    padding: 20px;
+    margin:30px;
+    border-radius: 50px;
+    box-shadow: 5px 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-top:150px;
+}
+h1 {
+    text-align: center;
+    color: #333;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+input, select, textarea {
+    width: 98%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.4s;
+}
+input[type="submit"]:hover {
+    background-color: #0056b3;
+}
