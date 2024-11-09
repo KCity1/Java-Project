@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Error Occurred</title>
 </head>
 <body>
 <h2>Something Went Wrong</h2>
