@@ -32,8 +32,11 @@ create table student(
 	StudentId int Auto_Increment PRIMARY KEY,
 	Name varchar(30),
 	Email varchar(100) UNIQUE,
+	Password varchar(30),
 	PhoneNo varchar(10),
 	Gender varchar(10),
 	AadharNum varchar(12),
-	Address varchar(40),
+	Address varchar(100),
 	Birthdate date);
+	
+DELETE FROM student WHERE PhoneNo = "";

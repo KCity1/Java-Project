@@ -40,6 +40,7 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>8.0.33</version>
 		</dependency>
+
 	</dependencies>
 	<build>
 		<finalName>24-advjava-Project-1</finalName>
