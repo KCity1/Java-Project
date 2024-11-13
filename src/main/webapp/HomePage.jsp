@@ -34,11 +34,37 @@ body {
 </head>
 <body>
 	<%
-		String name = (String) request.getAttribute("name");
+	String name = null;
+	Cookie cookie[] = request.getCookies();
+	String email = null;
+	String password = null;
+	if (cookie != null) {
+		for (Cookie c : cookie) {
+			if (c.getName().equals("Email")) {
+				email = c.getValue();
+			}
+			if (c.getName().equals("Password")) {
+				password = c.getValue();
+			}
+			
+			if(c.getName().equals("Name")) {
+				name = c.getValue();
+			}
+		}
+	} else {
+		request.getRequestDispatcher("Login.jsp").forward(request, response);
+	}
+
+	if (email == null) {
+		request.setAttribute("DataNotFound", "Not logged into the website");
+		request.getRequestDispatcher("Login.jsp").forward(request, response);
+	}
 	%>
 	<div class="hero-section text-black">
 		<div class="container">
-			<h1 class="display-4">Welcome to the Student Portal <%=name==null?"Guest":name%></h1>
+			<h1 class="display-4">
+				Welcome to the Student Portal
+				<%=name == null ? "Guest" : name%></h1>
 			<p class="lead">Your one-stop platform for managing student
 				activities and resources.</p>
 			<a href="profile.jsp" class="btn btn-primary btn-lg">Go to Your

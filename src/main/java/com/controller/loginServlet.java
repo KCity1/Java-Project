@@ -9,6 +9,7 @@ import java.sql.ResultSet;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -39,7 +40,14 @@ public class loginServlet extends HttpServlet {
 			
 			if (resultset.next()) {
 				name = resultset.getString("Name");
-				request.setAttribute("name", name);
+				
+				Cookie emailCookie = new Cookie("Email",email);
+				Cookie passwordCookie = new Cookie("Password",password);
+				Cookie nameCookie = new Cookie("Name",name);
+				response.addCookie(emailCookie);
+				response.addCookie(passwordCookie);
+				response.addCookie(nameCookie);
+				
 				request.getRequestDispatcher("HomePage.jsp").forward(request, response);
 			} else {
 				request.setAttribute("email", email);

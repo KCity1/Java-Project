@@ -9,7 +9,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 
 @WebFilter("/signupServlet")
-public class signupFilter implements Filter {
+public class signup1Filter implements Filter {
 
 	@Override
 	public void init(FilterConfig filterConfig) throws javax.servlet.ServletException {
@@ -28,7 +28,7 @@ public class signupFilter implements Filter {
 		String address = request.getParameter("address");
 		String birthdate = request.getParameter("birthdate");
 
-		String Emailregex = "^[A-Za-z0-9._%+-]+@gmail\\.com$";
+		String Emailregex = "[A-Za-z0-9\\._%+\\-]+@[A-Za-z0-9\\.\\-]+\\.[A-Za-z]{2,}";
 
 		boolean flag = true;
 		if (!email.matches(Emailregex)) {
