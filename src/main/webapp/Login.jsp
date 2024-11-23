@@ -41,17 +41,23 @@ body {
 					<div class="error-message"><%=DataNotFound == null ? "" : DataNotFound%></div>
 					<label for="email" class="form-label">Email:</label> <input
 						type="email" class="form-control" id="email" name="email"
-						value="<%=request.getAttribute("email") == null ? "" : request.getAttribute("email")%>"
+						value="<%=request.getAttribute("Email") == null ? "" : request.getAttribute("Email")%>"
 						required>
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label">Password:</label> <input
 						type="password" class="form-control" id="password" name="password"
-						value="<%=request.getAttribute("password") == null ? "" : request.getAttribute("password")%>"
+						value="<%=request.getAttribute("Password") == null ? "" : request.getAttribute("Password")%>"
 						required>
 				</div>
 				<button type="submit" class="btn btn-primary w-100">Login</button>
+				<br> <br>
 			</form>
+			<div class="links">
+				<!-- Add navigation links here -->
+				<a href="ForgetPassword.jsp">Forgot Password?</a> &nbsp;|&nbsp; <a
+					href="signUp.jsp">Sign Up</a>
+			</div>
 		</div>
 	</div>
 </body>
