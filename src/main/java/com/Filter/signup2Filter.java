@@ -32,7 +32,7 @@ public class signup2Filter implements Filter {
 		String aadhar = request.getParameter("aadhar").trim();
 		String address = request.getParameter("address");
 		String birthdate = request.getParameter("birthdate");
-		boolean isAadharDuplicate = false;
+		boolean isDuplicate = false;
 
 		String SQLDriver = "com.mysql.cj.jdbc.Driver";
 		String jdbcUrl = "jdbc:mysql://localhost:3306/student_portal";
@@ -51,22 +51,21 @@ public class signup2Filter implements Filter {
 				if (rs.getString("AadharNum").equals(aadhar)) {
 					request.setAttribute("AadharError",
 							"This Aadhar number is already registered. Please use a different Aadhar number.");
-					isAadharDuplicate = true;
+					isDuplicate = true;
 				}
 				if (rs.getString("Email").equals(email)) {
 					request.setAttribute("emailError",
 							"Email address already registered. Please use a different one or sign in.");
-					isAadharDuplicate = true;
+					isDuplicate = true;
 				}
 			}
-
 			connection.close();
 		} catch (Exception e) {
 			e.printStackTrace();
 			throw new ServletException("Database error during Aadhar number validation.");
 		}
 
-		if (isAadharDuplicate) {
+		if (isDuplicate) {
 			System.out.println("Duplicate data");
 			request.setAttribute("name", name);
 			request.setAttribute("email", email);

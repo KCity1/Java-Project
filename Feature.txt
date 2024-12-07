@@ -27,16 +27,26 @@ Student_portal:
 	-Teacher
 	-etc 
 	
+DELETE FROM student WHERE PhoneNo = "";
 	
 create table student(
 	StudentId int Auto_Increment PRIMARY KEY,
 	Name varchar(30),
 	Email varchar(100) UNIQUE,
 	Password varchar(30),
+	OTP int(6),
 	PhoneNo varchar(10),
 	Gender varchar(10),
 	AadharNum varchar(12),
 	Address varchar(100),
 	Birthdate date);
 	
-DELETE FROM student WHERE PhoneNo = "";
+insert into student values(1,"Vidhit Agrawal","vidhit.agrawal2004@gmail.com","12345678",null,"7990161171","Male","123456789009","C.G road Ahmedabad","2004-12-25"); 
+
+select * from student;
+
+
+
+
+
+App specific password: "iadduyygaqhjmdgj"

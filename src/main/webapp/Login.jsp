@@ -40,13 +40,13 @@ body {
 				<div class="mb-3">
 					<div class="error-message"><%=DataNotFound == null ? "" : DataNotFound%></div>
 					<label for="email" class="form-label">Email:</label> <input
-						type="email" class="form-control" id="email" name="email"
+						type="email" class="form-control" id="Email" name="Email"
 						value="<%=request.getAttribute("Email") == null ? "" : request.getAttribute("Email")%>"
 						required>
 				</div>
 				<div class="mb-3">
 					<label for="password" class="form-label">Password:</label> <input
-						type="password" class="form-control" id="password" name="password"
+						type="password" class="form-control" id="Password" name="Password"
 						value="<%=request.getAttribute("Password") == null ? "" : request.getAttribute("Password")%>"
 						required>
 				</div>

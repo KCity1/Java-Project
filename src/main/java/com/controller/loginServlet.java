@@ -71,6 +71,9 @@ public class loginServlet extends HttpServlet {
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
+			request.setAttribute("email", email);
+			request.setAttribute("password", password);
+			request.setAttribute("DataNotFound", "Email or Password is incorrect!");
 			request.getRequestDispatcher("Login.jsp").forward(request, response);
 			;
 		}
